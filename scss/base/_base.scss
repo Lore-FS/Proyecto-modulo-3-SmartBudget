@@ -1,0 +1,18 @@
+@use "../abstracts/variables";
+
+body {
+    font-family: variables.$font-main;
+    background-color: variables.$color-bg;
+    color: variables.$color-text;
+}
+
+h1,
+h2,
+h3 {
+    color: variables.$color-title;
+    font-weight: 700;
+}
+
+button{
+    font-weight: 600;
+}

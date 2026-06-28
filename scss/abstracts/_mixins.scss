@@ -1,0 +1,63 @@
+@use "../abstracts/variables";
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin button-base {
+    display: inline-block;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+}
+
+@mixin button-primary {
+    background-color: variables.$color-primary;
+    color: white;
+    border: 1px solid variables.$color-primary;
+
+    &:hover {
+        background-color: variables.$color-primary-hover;
+        border-color: variables.$color-primary-hover;
+        color: white;
+    }
+}
+
+@mixin button-secondary {
+    background-color: transparent;
+    color: variables.$color-primary;
+    border: 1px solid variables.$color-primary;
+
+    &:hover {
+        background-color: variables.$color-primary-hover;
+        color: white;
+        border-color: variables.$color-primary-hover;
+    }
+}
+
+@mixin media-sm {
+    @media (min-width: variables.$breakpoint-sm) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media (min-width: variables.$breakpoint-md) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media (min-width: variables.$breakpoint-lg) {
+        @content;
+    }
+}

@@ -1,0 +1,92 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.footer {
+    background-color: variables.$color-bg-footer !important;
+
+    &__column {
+        border-left: 1px solid variables.$color-border-column-footer;
+        padding-left: 1.5rem;
+    }
+
+    &__brand,
+    &__column {
+        min-width: 0;
+        @include mixins.flex-column;
+    }
+
+    &__copy,
+    &__link {
+        line-height: 1.6;
+        color: white;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    &__list,
+    &__social-list {
+        list-style: none;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    &__social-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__title {
+        color: white;
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            color: variables.$color-success-light;
+        }
+    }
+
+    &__social-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+
+    @include mixins.media-sm {
+
+        &__content {
+            gap: 2rem;
+        }
+    }
+
+    @include mixins.media-md {
+
+        &__content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include mixins.media-lg {
+        &__social-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        &__content {
+            grid-template-columns: 1.5fr repeat(4, 1fr);
+        }
+    }
+}

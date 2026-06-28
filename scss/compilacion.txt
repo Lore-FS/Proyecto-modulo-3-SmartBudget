@@ -1,0 +1,7 @@
+1. Para generar la compilacion en que se requiere el resultado en otra carpeta:
+
+sass scss/main.scss css/styles.css
+ 
+2. Para generar la compilacion en que se requiere el resultado en otra carpeta y que también monitoree cambios:
+
+sass --watch scss/main.scss css/styles.css

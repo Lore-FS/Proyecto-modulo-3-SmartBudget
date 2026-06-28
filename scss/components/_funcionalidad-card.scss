@@ -1,0 +1,75 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.funcionalidad-card {
+    display: flex;
+    background-color: variables.$color-bg;
+    border: 1px solid variables.$color-card-border;
+    border-radius: 16px;
+    box-shadow: variables.$shadow-card;
+    transition: all 0.3s ease;
+    text-align: center;
+    max-width: 340px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+    &__body {
+        padding: 24px;
+    }
+
+    &__image {
+        width: 75px;
+        margin-bottom: 16px;
+        margin-top: 10px;
+    }
+
+    &__icon {
+        @include mixins.flex-center;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1.5rem;
+        border-radius: 28px;
+        background-color: variables.$color-bg-testimonios;
+        box-shadow: variables.$shadow-card;
+    }
+
+    &__title {
+        color: variables.$color-title;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: variables.$color-text;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: variables.$shadow-card-hover;
+    }
+
+    @include mixins.media-sm {
+        max-width: none;
+        margin: 0;
+
+        &__body {
+            padding: 20px;
+        }
+
+        &__image {
+            width: 90px;
+            height: auto;
+        }
+
+        &__title {
+            font-size: 1.1rem;
+        }
+
+        &__description {
+            font-size: 0.95rem;
+        }
+    }
+}

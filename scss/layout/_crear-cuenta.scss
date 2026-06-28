@@ -1,0 +1,107 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.crear-cuenta {
+    background-color: variables.$color-bg-crear-cuenta;
+    background-image: url("../img/imagen-fondo-ondas-crear-cuenta.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    margin: 1.5rem auto;
+    max-width: 1200px;
+    overflow: hidden;
+
+    &__fila {
+        @include mixins.flex-column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    &__action {
+        flex: 2;
+        text-align: center;
+    }
+
+    &__text {
+        flex: 4;
+        text-align: center;
+    }
+
+    &__content {
+        padding: 1rem 2rem 0;
+    }
+
+    &__title {
+        color: variables.$color-title;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: variables.$color-text;
+    }
+
+    &__image-contenedor {
+        display: flex;
+        flex: 3;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    &__image {
+        margin-bottom: -6px;
+        max-width: 260px;
+    }
+
+
+    &__button {
+        @include mixins.button-base;
+        padding: 12px 32px;
+
+    }
+
+    &__button--primary {
+        @include mixins.button-primary;
+    }
+
+    // @include mixins.media-sm {}
+
+    @include mixins.media-md {
+
+        &__fila {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__text {
+            flex: 4;
+            text-align: left;
+        }
+
+        &__image-contenedor {
+            flex: 3;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        &__image {
+            margin-bottom: -8px;
+            max-width: 300px;
+        }
+
+        &__action {
+            flex: 3;
+            text-align: center;
+        }
+
+    }
+
+    @include mixins.media-lg {
+
+        &__image {
+            max-width: 320px;
+        }
+    }
+
+}

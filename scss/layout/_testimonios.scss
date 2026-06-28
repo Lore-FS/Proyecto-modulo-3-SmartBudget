@@ -1,0 +1,59 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.testimonios {
+    background-color: variables.$color-bg-testimonios;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    //acá no se me veían bien los botones del carrusel, así que pedí ayuda a copilot y chat gpt para que se vieran bien los indicadores debajo del carrusel y las flechas atrás y siguiente, que eran además afectados por el tema suave del carrusel y por eso no se notaban
+    .carousel-indicators {
+        bottom: -50px;
+    }
+
+    .carousel-indicators button {
+        background-color: variables.$color-primary !important;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: auto;
+    }
+
+    .carousel-control-prev {
+        left: -10px;
+    }
+
+    .carousel-control-next {
+        right: -10px;
+    }
+
+    .carousel-control-prev-icon {
+        // background-image: url("../img/arrow-circle-left-primary.svg");
+        background-image: url("../img/arrow-back-ios-primary.svg");
+
+    }
+
+    .carousel-control-next-icon {
+        // background-image: url("../img/arrow-circle-right-primary.svg");
+        background-image: url("../img/arrow-forward-ios-primary.svg");
+
+    }
+
+    @include mixins.media-md {
+        .carousel-control-prev {
+            left: -45px;
+        }
+
+        .carousel-control-next {
+            right: -45px;
+        }
+    }
+
+}

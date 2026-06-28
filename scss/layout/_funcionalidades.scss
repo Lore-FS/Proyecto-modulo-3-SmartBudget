@@ -1,0 +1,35 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.funcionalidades {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    @include mixins.media-sm {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    @include mixins.media-md {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include mixins.media-lg {
+        &__grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+}

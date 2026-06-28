@@ -1,0 +1,138 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.hero {
+    background-color: variables.$color-bg-hero;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+    &__content {
+        @include mixins.flex-column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    &__text {
+        max-width: 520px;
+    }
+
+    &__title {
+        color: variables.$color-title;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: variables.$color-text;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 1.5rem 0;
+
+    }
+
+    &__actions {
+        @include mixins.flex-column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    &__button {
+        @include mixins.button-base;
+        padding: 12px 28px;
+
+        &--primary {
+            @include mixins.button-primary;
+        }
+
+        &--secondary {
+            @include mixins.button-secondary;
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+        @include mixins.flex-center;
+    }
+
+    &__image {
+        display: block;
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+    }
+
+    @include mixins.media-sm {
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__actions {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__image {
+            max-width: 500px;
+        }
+
+    }
+
+    @include mixins.media-md {
+        &__title {
+            font-size: 2.8rem;
+            line-height: 1.15;
+        }
+
+        &__description {
+            font-size: 1.1rem;
+        }
+
+        &__image {
+            max-width: 620px;
+        }
+
+        &__actions {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @include mixins.media-lg {
+        &__content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 2rem;
+        }
+
+        &__actions {
+            justify-content: flex-start;
+
+        }
+
+        &__title {
+            font-size: 3.2rem;
+        }
+
+        &__description {
+            font-size: 1.25rem;
+        }
+
+        &__text {
+            flex: 0 0 42%;
+        }
+
+        &__image-container {
+            flex: 0 0 58%;
+        }
+
+        &__image {
+            max-width: 680px;
+        }
+    }
+}

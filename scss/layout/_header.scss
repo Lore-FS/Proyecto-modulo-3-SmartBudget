@@ -1,0 +1,104 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.header {
+    &__nav {
+        border-bottom: 1px solid variables.$color-card-border;
+    }
+
+    &__logo {
+        width: 220px;
+        height: auto;
+    }
+
+    &__link {
+        font-weight: 500;
+        color: variables.$color-title;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: variables.$color-success !important;
+        }
+    }
+
+    &__menu {
+        @include mixins.flex-column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 0;
+    }
+
+    &__actions {
+        @include mixins.flex-column;
+        gap: .75rem;
+        width: 100%;
+    }
+
+    &__button {
+        @include mixins.button-base;
+        padding: 12px 24px;
+        width: fit-content;
+        min-width: 170px;
+        text-align: center;
+        align-self: flex-start;
+
+        &--primary {
+            @include mixins.button-primary;
+        }
+
+        &--secondary {
+            @include mixins.button-secondary;
+        }
+    }
+
+    @include mixins.media-sm {
+        &__actions {
+            flex-direction: row;
+            width: auto;
+        }
+    }
+
+    @include mixins.media-md {
+        &__menu {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0;
+        }
+
+        &__link {
+            font-size: 0.9rem;
+        }
+
+        &__actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        &__button {
+            @include mixins.button-base;
+            min-width: auto;
+            width: fit-content;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @include mixins.media-lg {
+        &__button {
+            @include mixins.button-base;
+            min-width: 170px;
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+
+        &__link {
+            font-size: 1rem;
+        }
+
+        &__menu {
+            gap: 1rem;
+        }
+    }
+
+}
